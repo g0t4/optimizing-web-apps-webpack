@@ -1,0 +1,25 @@
+<p>
+  <button ng-click="game.newGame()">New Game</button>
+  Score: {{ scoring.score }}
+</p>
+
+<div class="top-row">
+  <s-foundation ng-repeat="foundation in game.foundations"></s-foundation>
+
+  <s-no-pile></s-no-pile>
+  <s-no-pile></s-no-pile>
+
+  <s-stacked-pile pile="game.remainder"
+                  ng-click="game.remainder.flipTopCardToWaste()">
+  </s-stacked-pile>
+
+  <s-stacked-pile pile="game.remainder.waste"
+                  ng-dblclick="game.tryMoveTopCardToAnyFoundation(game.remainder.waste)"
+                  drag-container="game.remainder.waste">
+  </s-stacked-pile>
+</div>
+
+<div class="tableau-row">
+  <s-no-pile></s-no-pile>
+  <s-tableau ng-repeat="tableau in game.tableaus"></s-tableau>
+</div>

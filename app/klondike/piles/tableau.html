@@ -1,0 +1,10 @@
+<div class="pile"
+     ng-class="{'empty-pile': tableau.isEmpty()}"
+     ng-dblclick="game.tryMoveTopCardToAnyFoundation(tableau)"
+     drop-container on-drop="tableau.moveCardsFrom(data)"
+     drag-container="tableau">
+  <s-card ng-repeat="card in tableau.cards"
+          card="card"
+          ng-class="{ 'only-show-top-of-card': card != tableau.topCard() }">
+  </s-card>
+</div>

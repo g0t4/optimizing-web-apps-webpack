@@ -1,0 +1,35 @@
+body {
+    padding-left: 50px;
+    padding-right: 50px;
+    background: #B1CB9B;
+}
+
+div.pile,
+div.no-pile {
+    width: 72px;
+    height: 96px;
+    margin-right: 10px;
+    float: left;
+}
+
+div.empty-pile {
+    background-color: #CCE1A9;
+}
+
+.turned-down-card {
+    background: url('../cards/images/b1fv.png');
+    width: 72px;
+    height: 96px;
+    float: left;
+}
+
+.only-show-top-of-card {
+    width: 72px;
+    height: 16px;
+    float: left;
+}
+
+.tableau-row {
+    padding-top: 50px;
+    clear: both;
+}

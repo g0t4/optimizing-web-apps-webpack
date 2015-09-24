@@ -20,7 +20,7 @@
   "scripts": {
     "postinstall": "node node_modules/bower/bin/bower install",
     "prestart": "npm install",
-    "start": "http-server -c-1",
+    "start": "http-server -c-1 -o",
     "pretest": "npm install",
     "test": "karma start karma.conf.js",
     "test-single-run": "karma start karma.conf.js --single-run"

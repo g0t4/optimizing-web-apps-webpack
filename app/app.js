@@ -1,5 +1,5 @@
 (function () {
   "use strict";
 
-  angular.module("solitaire", ["klondike"]);
+  angular.module("solitaire", ["klondike", "filearts.dragDrop"]);
 })();

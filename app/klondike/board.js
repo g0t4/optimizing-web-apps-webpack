@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-  angular.module("klondike.board", ["ngRoute", "klondike.game", "filearts.dragDrop"])
+  angular.module("klondike.board", ["ngRoute", "klondike.game"])
     .config(["$routeProvider", function ($routeProvider) {
       $routeProvider
         .when("/board", {

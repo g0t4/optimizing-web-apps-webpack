@@ -7,9 +7,6 @@
     "angular-loader": "1.2.28",
     "angular-mocks": "1.2.28",
     "underscore": "1.8.2",
-    "angular-drag-drop": "ggoodman/angular-drag-drop#1.0.0"
-  },
-  "resolutions": {
-    "angular": "1.2.28"
+    "ngDraggable": "0.1.8"
   }
 }

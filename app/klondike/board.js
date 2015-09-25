@@ -15,41 +15,43 @@
       $scope.game = klondikeGame;
       $scope.scoring = scoring;
     }])
-    .directive("sNoPile", function noPileFactory() {
+    .directive("sNoPile", function () {
       return {
         restrict: "E",
         template: "<div class=\"no-pile\"></div>"
       };
     })
-    .directive("sTableau", function tableauFactory() {
+    .directive("sTableau", function () {
       return {
         restrict: "E",
         templateUrl: "klondike/piles/tableau.html"
       };
     })
-    .directive("sFoundation", function tableauFactory() {
+    .directive("sFoundation", function () {
       return {
         restrict: "E",
         templateUrl: "klondike/piles/foundation.html"
       };
     })
-    .directive("sCard", function cardFactory() {
+    .directive("sCard", function () {
       return {
-        restrict: "E",
+        restrict: "A",
         templateUrl: "cards/card.html",
         scope: {
           card: "="
         }
       };
     })
-    .directive("sStackedPile", function cardFactory() {
+    .directive("sRemainder", function () {
       return {
         restrict: "E",
-        templateUrl: "klondike/piles/stacked-pile.html",
-        scope: {
-          pile: "="
-        }
+        templateUrl: "klondike/piles/remainder.html"
+      };
+    })
+    .directive("sWaste", function () {
+      return {
+        restrict: "E",
+        templateUrl: "klondike/piles/waste.html"
       };
     });
-
 })();

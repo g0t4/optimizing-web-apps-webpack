@@ -1,7 +1,6 @@
 <div class="pile"
-     ng-class="{'empty-pile': foundation.isEmpty()}"
-     drop-container on-drop="foundation.moveCardsFrom(data)"
-     drag-container="foundation"
-  >
-  <s-card card="foundation.topCard()"></s-card>
+     ng-drop="true" ng-drop-success="foundation.moveCardsFrom($data)">
+  <div s-card card="foundation.topCard()"
+       ng-drag="true" ng-drag-data="foundation">
+  </div>
 </div>

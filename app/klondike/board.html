@@ -9,14 +9,8 @@
   <s-no-pile></s-no-pile>
   <s-no-pile></s-no-pile>
 
-  <s-stacked-pile pile="game.remainder"
-                  ng-click="game.remainder.flipTopCardToWaste()">
-  </s-stacked-pile>
-
-  <s-stacked-pile pile="game.remainder.waste"
-                  ng-dblclick="game.tryMoveTopCardToAnyFoundation(game.remainder.waste)"
-                  drag-container="game.remainder.waste">
-  </s-stacked-pile>
+  <s-remainder></s-remainder>
+  <s-waste></s-waste>
 </div>
 
 <div class="tableau-row">

@@ -57,3 +57,6 @@ TableauPile.prototype.moveCardsFrom = function (source) {
   }
   this.moveTopCardFrom(source);
 };
+TableauPile.prototype.heightForDrop = function () {
+  return (96 + Math.max(0, this.cards.length - 1) * 16) + 'px';
+};

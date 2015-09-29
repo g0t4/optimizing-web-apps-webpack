@@ -51,6 +51,9 @@ TableauPile.prototype.moveFromTableau = function (source) {
   });
 };
 TableauPile.prototype.moveCardsFrom = function (source) {
+  if(source == null) {
+    return;
+  }
   if (source instanceof TableauPile) {
     this.moveFromTableau(source);
     return;

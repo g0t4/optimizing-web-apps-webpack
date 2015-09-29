@@ -3,7 +3,7 @@ describe("A tableau pile", function () {
 
   beforeEach(module("klondike.scoring"));
 
-  it("that is empty will accept a king", function() {
+  it("that is empty will accept a king", function () {
     var king = new Card({rank: "King", suit: "Clubs"});
     var tableau = new TableauPile();
 
@@ -13,7 +13,7 @@ describe("A tableau pile", function () {
     expect(tableau.topCard()).toBe(king);
   });
 
-  it("that is empty will not accept a rank other than king", function() {
+  it("that is empty will not accept a rank other than king", function () {
     var ace = new Card({rank: "Ace", suit: "Clubs"});
     var tableau = new TableauPile();
 
@@ -23,7 +23,7 @@ describe("A tableau pile", function () {
     expect(tableau.isEmpty()).toBe(true);
   });
 
-  it("will accept lower rank in alternate color", function() {
+  it("will accept lower rank in alternate color", function () {
     var kingOfClubs = new Card({rank: "King", suit: "Clubs"});
     var tableau = new TableauPile();
     tableau.drop(kingOfClubs);
@@ -35,7 +35,7 @@ describe("A tableau pile", function () {
     expect(tableau.topCard()).toBe(queenOfHearts);
   });
 
-  it("will not accept lower rank in same color", function() {
+  it("will not accept lower rank in same color", function () {
     var kingOfClubs = new Card({rank: "King", suit: "Clubs"});
     var tableau = new TableauPile();
     tableau.drop(kingOfClubs);
@@ -47,7 +47,7 @@ describe("A tableau pile", function () {
     expect(tableau.topCard()).toBe(kingOfClubs);
   });
 
-  it("will not accept different color if not next lower rank", function() {
+  it("will not accept different color if not next lower rank", function () {
     var kingOfClubs = new Card({rank: "King", suit: "Clubs"});
     var tableau = new TableauPile();
     tableau.drop(kingOfClubs);
@@ -59,7 +59,7 @@ describe("A tableau pile", function () {
     expect(tableau.topCard()).toBe(kingOfClubs);
   });
 
-  it("will flip over next card if top card removed", inject(function(scoring) {
+  it("will flip over next card if top card removed", inject(function (scoring) {
     var kingOfClubs = new Card({rank: "King", suit: "Clubs"});
     var tableau = new TableauPile([], scoring);
     tableau.addTopCard(kingOfClubs);
@@ -72,7 +72,7 @@ describe("A tableau pile", function () {
     expect(kingOfClubs.turnedUp).toBe(true);
   }));
 
-  it("will not error if no next card after removing top", function() {
+  it("will not error if no next card after removing top", function () {
     var jackOfHearts = new Card({rank: "Jack", suit: "Hearts"});
     var tableau = new TableauPile();
     tableau.addTopCard(jackOfHearts);
@@ -80,7 +80,13 @@ describe("A tableau pile", function () {
     tableau.removeCard(jackOfHearts);
   });
 
-  it("will accept all of another tableau", inject(function(scoring) {
+  it("will not error if event received to move from pile that doesn't exist", function () {
+    var source = new TableauPile([]);
+
+    source.moveCardsFrom(null);
+  });
+
+  it("will accept all of another tableau", inject(function (scoring) {
     var hidden = new Card({rank: "10", suit: "Hearts"});
     var blackFour = new Card({rank: "4", suit: "Spades"});
     blackFour.turnUp();
@@ -99,7 +105,7 @@ describe("A tableau pile", function () {
     expect(hidden.turnedUp).toBe(true);
   }));
 
-  it("will accept part of another tableau", function() {
+  it("will accept part of another tableau", function () {
     var hidden = new Card({rank: "10", suit: "Hearts"});
     var redDiamond = new Card({rank: "5", suit: "Diamonds"});
     redDiamond.turnUp();
@@ -119,7 +125,7 @@ describe("A tableau pile", function () {
     expect(destination.cards).toEqual([redHeart, blackFour, redThree]);
   });
 
-  it("will not accept turned down part of another tableau", function() {
+  it("will not accept turned down part of another tableau", function () {
     var blackFourDown = new Card({rank: "4", suit: "Spades"});
     var redThree = new Card({rank: "3", suit: "Hearts"});
     redThree.turnUp();
@@ -135,7 +141,7 @@ describe("A tableau pile", function () {
     expect(destination.cards).toEqual([redHeart]);
   });
 
-  it("will not accept multiple from a pile that isn't another tableau", function() {
+  it("will not accept multiple from a pile that isn't another tableau", function () {
     var blackFour = new Card({rank: "4", suit: "Spades"});
     blackFour.turnUp();
     var redThree = new Card({rank: "3", suit: "Hearts"});

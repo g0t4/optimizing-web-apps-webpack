@@ -4,7 +4,7 @@
   "dependencies": {},
   "devDependencies": {
     "bower": "^1.8.2",
-    "eslint": "^4.7.0",
+    "eslint": "^4.8.0",
     "http-server": "^0.10.0",
     "jasmine-core": "^2.8.0",
     "karma": "^1.7.1",

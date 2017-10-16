@@ -7,3 +7,5 @@ tmp
 
 ## Directory-based project format:
 .idea/
+
+app/dist/

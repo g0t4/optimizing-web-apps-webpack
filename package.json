@@ -17,10 +17,11 @@
   },
   "scripts": {
     "build": "webpack app/app.js app/dist/app.bundle.js",
-    "watch": "webpack --watch app/app.js app/dist/app.bundle.js",
+    "watch": "npm run build -- --watch",
+    "start": "webpack-dev-server app/app.js app/dist/app.bundle.js",
+    
     "postinstall": "node node_modules/bower/bin/bower install",
     "prestart": "npm install",
-    "start": "http-server -c-1 -o",
     "pretest": "npm install",
     "test": "karma start karma.conf.js",
     "test-single-run": "karma start karma.conf.js --single-run"

@@ -16,10 +16,9 @@
     "webpack-dev-server": "^2.9.2"
   },
   "scripts": {
-    "build": "webpack app/app.js app/dist/app.bundle.js",
+    "build": "webpack",
     "watch": "npm run build -- --watch",
-    "start": "webpack-dev-server app/app.js app/dist/app.bundle.js",
-    
+    "start": "webpack-dev-server --open",
     "postinstall": "node node_modules/bower/bin/bower install",
     "prestart": "npm install",
     "pretest": "npm install",

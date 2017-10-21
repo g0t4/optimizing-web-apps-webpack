@@ -8,6 +8,7 @@ module.exports = {
   },
   devServer: {
     contentBase: path.resolve(__dirname, 'app'),
-    publicPath: '/dist/'
+    publicPath: '/dist/',
+    watchContentBase: true
   }
 };

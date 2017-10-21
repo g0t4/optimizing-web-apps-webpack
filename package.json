@@ -20,7 +20,7 @@
     "watch": "npm run build -- --watch",
     "start": "webpack-dev-server --open",
     "postinstall": "node node_modules/bower/bin/bower install",
-    "prestart": "npm install",
+    
     "pretest": "npm install",
     "test": "karma start karma.conf.js",
     "test-single-run": "karma start karma.conf.js --single-run"

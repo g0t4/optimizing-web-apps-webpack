@@ -5,5 +5,8 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'app/dist'),
     filename: 'app.bundle.js'
+  },
+  devServer: {
+    contentBase: path.resolve(__dirname, 'app'),
   }
 };

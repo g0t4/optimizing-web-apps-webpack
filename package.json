@@ -12,13 +12,14 @@
     "karma-firefox-launcher": "^1.0.1",
     "karma-jasmine": "^1.1.0",
     "karma-junit-reporter": "^1.2.0",
+    "nodemon": "^1.12.1",
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.9.3"
   },
   "scripts": {
     "build": "webpack",
     "watch": "npm run build -- --watch",
-    "start": "webpack-dev-server --open",
+    "start": "nodemon -w webpack.config.js -x webpack-dev-server",
     "postinstall": "node node_modules/bower/bin/bower install",
     "pretest": "npm install",
     "test": "karma start karma.conf.js",

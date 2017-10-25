@@ -19,7 +19,7 @@
   "scripts": {
     "build": "webpack",
     "watch": "npm run build -- --watch",
-    "start": "nodemon -w webpack.config.js -x webpack-dev-server",
+    "start": "NODE_ENV=development nodemon -w webpack.config.js -x webpack-dev-server",
     "postinstall": "node node_modules/bower/bin/bower install",
     "pretest": "npm install",
     "test": "karma start karma.conf.js",

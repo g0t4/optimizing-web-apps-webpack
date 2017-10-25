@@ -15,12 +15,6 @@ module.exports = function (env) {
       filename: 'app.bundle.js',
       publicPath: '/dist/',
     },
-    devServer: {
-      contentBase: path.resolve(__dirname, 'app'),
-      publicPath: '/dist/',
-      watchContentBase: false,
-      hotOnly: true
-    },
     plugins: [
       new webpack.DefinePlugin({
         ENV_IS_DEVELOPMENT: isDevelopment,
@@ -31,6 +25,12 @@ module.exports = function (env) {
 
   if (isDevelopment) {
     return merge(baseConfig, {
+      devServer: {
+        contentBase: path.resolve(__dirname, 'app'),
+        publicPath: '/dist/',
+        watchContentBase: false,
+        hotOnly: true
+      },
       plugins: [
         new webpack.NamedModulesPlugin(),
         new webpack.HotModuleReplacementPlugin()

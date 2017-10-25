@@ -15,7 +15,9 @@ const baseConfig = {
     watchContentBase: false,
     hotOnly: true
   },
-  plugins: []
+  plugins: [
+    new webpack.NamedModulesPlugin(),
+  ]
 };
 
 
@@ -27,7 +29,6 @@ module.exports = function (env) {
   if (isDevelopment) {
     return merge(baseConfig, {
       plugins: [
-        new webpack.NamedModulesPlugin(),
         new webpack.HotModuleReplacementPlugin()
       ]
     });

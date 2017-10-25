@@ -29,14 +29,7 @@ module.exports = function (env) {
   if (isDevelopment) {
     return merge(baseConfig, {
       plugins: [
-        new webpack.HotModuleReplacementPlugin(),
-        {
-          apply(compiler) {
-            compiler.plugin("done", function (params) {
-              console.log(require('util').inspect(compiler.options));
-            });
-          }
-        }
+        new webpack.HotModuleReplacementPlugin()
       ]
     });
     /*baseConfig.plugins.push(

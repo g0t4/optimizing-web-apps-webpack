@@ -31,7 +31,9 @@ function Scoring() {
   }
 }
 
-console.log('[scoring] evaluating');
+if (ENV_IS_DEVELOPMENT) {
+  console.log('[scoring] evaluating');
+}
 
 if (module.hot) {
 

@@ -1,6 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
-
+const merge = require('webpack-merge');
 
 const baseConfig = {
   entry: './app/app.js',
@@ -25,10 +25,16 @@ module.exports = function (env) {
   console.log(`This is a ${isDevelopment ? "development" : "production"} build`);
 
   if (isDevelopment) {
-    baseConfig.plugins.push(
+    return merge(baseConfig, {
+      plugins: [
+        new webpack.NamedModulesPlugin(),
+        new webpack.HotModuleReplacementPlugin()
+      ]
+    });
+    /*baseConfig.plugins.push(
       new webpack.NamedModulesPlugin(),
       new webpack.HotModuleReplacementPlugin()
-    );
+    );*/
   }
 
   return baseConfig;

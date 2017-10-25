@@ -23,7 +23,8 @@ module.exports = function (env) {
     },
     plugins: [
       new webpack.DefinePlugin({
-        ENV_IS_DEVELOPMENT: isDevelopment
+        ENV_IS_DEVELOPMENT: isDevelopment,
+        ENV_IS: JSON.stringify(isDevelopment ? "development" : "production"),
       })
     ]
   };

@@ -31,6 +31,8 @@ function Scoring() {
   }
 }
 
+console.log(ENV_IS);
+
 if (ENV_IS_DEVELOPMENT) {
   console.log('[scoring] evaluating');
 }

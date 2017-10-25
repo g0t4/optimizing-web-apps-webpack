@@ -17,9 +17,9 @@
     "webpack-dev-server": "^2.9.3"
   },
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --env production",
     "watch": "npm run build -- --watch",
-    "start": "NODE_ENV=development nodemon -w webpack.config.js -x webpack-dev-server",
+    "start": "nodemon -w webpack.config.js -x webpack-dev-server -- --env development",
     "postinstall": "node node_modules/bower/bin/bower install",
     "pretest": "npm install",
     "test": "karma start karma.conf.js",

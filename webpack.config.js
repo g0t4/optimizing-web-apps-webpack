@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
-
+const StatsGraphPlugin = require('./StatsGraphPlugin');
 
 module.exports = function (env) {
 
@@ -19,7 +19,8 @@ module.exports = function (env) {
       new webpack.DefinePlugin({
         ENV_IS_DEVELOPMENT: isDevelopment,
         ENV_IS: JSON.stringify(env),
-      })
+      }),
+      new StatsGraphPlugin(),
     ]
   };
 

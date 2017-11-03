@@ -15,6 +15,28 @@ module.exports = function (env) {
       filename: 'app.bundle.js',
       publicPath: '/dist/',
     },
+    module: {
+      rules: [
+        {
+          test: /\.js$/,
+          exclude: /(node_modules|bower_components)/,
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: [
+                ['@babel/preset-env', {
+                  debug: true,
+                  modules: false,
+                  targets: {
+                    browsers: ['> 1%', 'not IE < 12']
+                  }
+                }]
+              ]
+            }
+          }
+        }
+      ]
+    },
     plugins: [
       new webpack.DefinePlugin({
         ENV_IS_DEVELOPMENT: isDevelopment,

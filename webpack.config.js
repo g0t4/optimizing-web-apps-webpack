@@ -52,7 +52,8 @@ module.exports = function (env) {
         contentBase: path.resolve(__dirname, 'app'),
         publicPath: '/dist/',
         watchContentBase: false,
-        hotOnly: true
+        hotOnly: true,
+        overlay: true,
       },
       plugins: [
         new webpack.NamedModulesPlugin(),

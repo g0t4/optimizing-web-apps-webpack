@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const StatsGraphPlugin = require('./StatsGraphPlugin');
+const babelLoader = require('./babelLoader');
 
 module.exports = function (env) {
 
@@ -14,17 +15,6 @@ module.exports = function (env) {
       path: path.resolve(__dirname, 'app/dist'),
       filename: 'app.bundle.js',
       publicPath: '/dist/',
-    },
-    module: {
-      rules: [
-        {
-          test: /\.js$/,
-          exclude: /(node_modules|bower_components)/,
-          use: {
-            loader: 'babel-loader',
-          }
-        }
-      ]
     },
     plugins: [
       new webpack.DefinePlugin({
@@ -50,6 +40,10 @@ module.exports = function (env) {
       ]
     });
   }
-
-  return baseConfig;
+  else {
+    return merge(
+      baseConfig,
+      babelLoader
+    );
+  }
 };

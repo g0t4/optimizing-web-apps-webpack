@@ -5,8 +5,8 @@
     "webpack-merge": "^4.1.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0-beta.31",
-    "@babel/preset-env": "^7.0.0-beta.31",
+    "@babel/core": "^7.0.0-beta.32",
+    "@babel/preset-env": "^7.0.0-beta.32",
     "babel-loader": "^8.0.0-beta.0",
     "bower": "^1.8.2",
     "eslint": "^4.11.0",

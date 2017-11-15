@@ -13,7 +13,8 @@ class StatsGraphPlugin {
       // arguments to pass to webpack-stats-graph
       args: [
         '--show-size',
-        '--show-sources'
+        '--show-sources',
+        '--color-by-size',
       ]
     };
 

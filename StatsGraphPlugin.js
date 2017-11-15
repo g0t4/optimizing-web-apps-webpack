@@ -10,6 +10,11 @@ class StatsGraphPlugin {
     const defaultOptions = {
       // set verbose to true to always get output about webpack-stats-graph
       verbose: false,
+      // arguments to pass to webpack-stats-graph
+      args: [
+        '--show-size',
+        '--show-sources'
+      ]
     };
 
     this.options = options || defaultOptions;
@@ -35,7 +40,9 @@ class StatsGraphPlugin {
     // this plugin expects to find webpack-stats-graph command globally:
     // npm install -g webpack-stats-graph
     this.info(`executing webpack-stats-graph`);
-    exec('webpack-stats-graph', (error, stdout, stderr) => {
+
+    const commandAndArgs = ['webpack-stats-graph'].concat(this.options.args).join(' ');
+    exec(commandAndArgs, (error, stdout, stderr) => {
 
       if (error) {
         console.group(`${messagePrefix} webpack-stats-graph failed`);

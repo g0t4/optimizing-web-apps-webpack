@@ -1,4 +1,5 @@
-import "@babel/polyfill";
+//import "@babel/polyfill";
+import "core-js/shim";
 import "./klondike/scoring.js";
 import "./klondike/klondike.js";
 import "./klondike/board.js";

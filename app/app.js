@@ -1,4 +1,4 @@
-import "@babel/polyfill";
+//import "@babel/polyfill";
 //import "core-js/shim";
 //import "core-js/es6/promise";
 import "./klondike/scoring.js";

@@ -4,9 +4,9 @@ module.exports = {
       debug: true,
       modules: false,
       targets: {
-        browsers: ['> 1%', 'not IE < 12']
+        browsers: ['> 1%']
       },
-      useBuiltIns: 'entry'
+      useBuiltIns: 'usage'
     }]
   ]
 };

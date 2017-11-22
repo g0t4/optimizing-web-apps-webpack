@@ -7,8 +7,14 @@ module.exports = {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
         use: [
-          'tee-loader',
-          'babel-loader'
+          'tee-loader?label=after',
+          'babel-loader',
+          {
+            loader: 'tee-loader',
+            options: {
+              label: 'before'
+            }
+          }
         ]
       }
     ]

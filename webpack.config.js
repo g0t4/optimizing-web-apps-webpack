@@ -3,7 +3,8 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 const StatsGraphPlugin = require('./StatsGraphPlugin');
 const babelLoader = require('./babelLoader');
-const CleanWebpackPlugin = require('clean-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const NpmInstallPlugin = require('npm-install-webpack-plugin');
 
 
 module.exports = function (env) {
@@ -19,6 +20,7 @@ module.exports = function (env) {
       publicPath: '/dist/',
     },
     plugins: [
+      new NpmInstallPlugin(),
       new CleanWebpackPlugin(['app/dist']),
       new webpack.DefinePlugin({
         ENV_IS_DEVELOPMENT: isDevelopment,

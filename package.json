@@ -2,6 +2,7 @@
   "name": "solitaire",
   "private": true,
   "dependencies": {
+    "numeral": "^2.0.6",
     "webpack-merge": "^4.1.1"
   },
   "devDependencies": {

@@ -29,7 +29,7 @@ module.exports = function (env) {
   };
 
   if (isDevelopment) {
-    return merge(baseConfig, {
+    return merge(baseConfig, babelLoader, {
       devServer: {
         contentBase: path.resolve(__dirname, 'app'),
         publicPath: '/dist/',
@@ -38,7 +38,7 @@ module.exports = function (env) {
         overlay: true,
       },
       plugins: [
-        new webpack.NamedModulesPlugin(),
+        //new webpack.NamedModulesPlugin(),
         new webpack.HotModuleReplacementPlugin()
       ]
     });

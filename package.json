@@ -5,10 +5,10 @@
     "webpack-merge": "^4.1.1"
   },
   "devDependencies": {
-    "@babel/cli": "^7.0.0-beta.32",
-    "@babel/core": "^7.0.0-beta.32",
-    "@babel/polyfill": "^7.0.0-beta.32",
-    "@babel/preset-env": "^7.0.0-beta.32",
+    "@babel/cli": "^7.0.0-beta.37",
+    "@babel/core": "^7.0.0-beta.37",
+    "@babel/polyfill": "^7.0.0-beta.37",
+    "@babel/preset-env": "^7.0.0-beta.37",
     "babel-loader": "^8.0.0-beta.0",
     "bower": "^1.8.2",
     "clean-webpack-plugin": "^0.1.17",

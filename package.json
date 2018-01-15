@@ -22,7 +22,7 @@
     "karma-junit-reporter": "^1.2.0",
     "nodemon": "^1.14.11",
     "webpack": "^3.8.1",
-    "webpack-dev-server": "^2.9.4"
+    "webpack-dev-server": "^2.11.0"
   },
   "scripts": {
     "build": "webpack --env production",

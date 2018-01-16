@@ -13,6 +13,7 @@ module.exports = function (env) {
 
   const baseConfig = {
     entry: './app/app.js',
+    devtool: 'source-map',
     output: {
       path: path.resolve(__dirname, 'app/dist'),
       filename: 'app.bundle.js',

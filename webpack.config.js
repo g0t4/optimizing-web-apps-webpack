@@ -13,7 +13,7 @@ module.exports = function (env) {
 
   const baseConfig = {
     entry: './app/app.js',
-    devtool: 'hidden-source-map',
+    //devtool: 'hidden-nosources-sourcemap',
     output: {
       path: path.resolve(__dirname, 'app/dist'),
       filename: 'app.bundle.js',
@@ -26,6 +26,10 @@ module.exports = function (env) {
         ENV_IS: JSON.stringify(env),
       }),
       new StatsGraphPlugin(),
+      new webpack.SourceMapDevToolPlugin({
+        filename: '[name].map',
+        noSources: true,
+      })
     ]
   };
 

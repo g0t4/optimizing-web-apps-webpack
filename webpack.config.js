@@ -38,7 +38,7 @@ module.exports = function (env) {
         overlay: true,
       },
       plugins: [
-        //new webpack.NamedModulesPlugin(),
+        new webpack.NamedModulesPlugin(),
         new webpack.HotModuleReplacementPlugin()
       ]
     });

@@ -1,3 +1,5 @@
+import * as buildInformation from './buildInformation.gen.js';
+
 (function () {
   "use strict";
 
@@ -13,6 +15,7 @@
     .controller("KlondikeController", ["$scope", "klondikeGame", "scoring", function KlondikeController($scope, klondikeGame, scoring) {
       klondikeGame.newGame();
       $scope.game = klondikeGame;
+      $scope.buildInformation = buildInformation;
       $scope.scoring = scoring;
     }])
     .directive("sNoPile", function () {

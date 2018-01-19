@@ -33,3 +33,8 @@ div.pile {
     padding-top: 50px;
     clear: both;
 }
+
+.build-info {
+    clear: both;
+    font-size: 10px;
+}

@@ -2,9 +2,8 @@ const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const StatsGraphPlugin = require('./StatsGraphPlugin');
-const babelLoader = require('./babelLoader');
-const CleanWebpackPlugin = require('clean-webpack-plugin')
-
+const babelConfig = require('./configs/babel');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = function (env) {
 
@@ -46,7 +45,7 @@ module.exports = function (env) {
   else {
     return merge(
       baseConfig,
-      babelLoader
+      babelConfig
     );
   }
 };

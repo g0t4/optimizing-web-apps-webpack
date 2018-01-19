@@ -4,6 +4,7 @@ const merge = require('webpack-merge');
 const StatsGraphPlugin = require('./StatsGraphPlugin');
 const babelConfig = require('./configs/babel');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const codeGenConfig = require('./configs/codegen');
 
 module.exports = function (env) {
 
@@ -28,7 +29,7 @@ module.exports = function (env) {
   };
 
   if (isDevelopment) {
-    
+
     const devServerConfig = {
       devServer: {
         contentBase: path.resolve(__dirname, 'app'),
@@ -45,6 +46,7 @@ module.exports = function (env) {
 
     return merge(
       baseConfig,
+      codeGenConfig,
       devServerConfig
     );
   }

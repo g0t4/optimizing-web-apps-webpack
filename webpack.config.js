@@ -29,7 +29,7 @@ module.exports = function (env) {
   };
 
   if (isDevelopment) {
-    return merge(baseConfig, babelLoader, {
+    return merge(baseConfig, {
       devServer: {
         contentBase: path.resolve(__dirname, 'app'),
         publicPath: '/dist/',

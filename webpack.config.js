@@ -28,7 +28,8 @@ module.exports = function (env) {
   };
 
   if (isDevelopment) {
-    return merge(baseConfig, {
+    
+    const devServerConfig = {
       devServer: {
         contentBase: path.resolve(__dirname, 'app'),
         publicPath: '/dist/',
@@ -40,7 +41,12 @@ module.exports = function (env) {
         new webpack.NamedModulesPlugin(),
         new webpack.HotModuleReplacementPlugin()
       ]
-    });
+    };
+
+    return merge(
+      baseConfig,
+      devServerConfig
+    );
   }
   else {
     return merge(

@@ -7,3 +7,4 @@ tmp
 
 ## Directory-based project format:
 .idea/
+/statsgraph/

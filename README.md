@@ -1,6 +1,9 @@
 
 ## Course Details
 
+- [Initial code](https://github.com/g0t4/optimizing-web-apps-webpack/tree/webpack-javascript-start)
+- [Final code](https://github.com/g0t4/optimizing-web-apps-webpack/tree/webpack-javascript-end)
+
 **Tentative** webpack course series:
 1. (publishing soon) Webpack: Transpiling and Bundling JavaScript
 2. **(tentative)** *Webpack: Beyond JavaScript*

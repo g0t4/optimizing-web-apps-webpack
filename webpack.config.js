@@ -5,6 +5,7 @@ const StatsGraphPlugin = require('./StatsGraphPlugin');
 const babelConfig = require('./configs/babel');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const codeGenConfig = require('./configs/codegen');
+const ignoreCodeGenConfig = require('./configs/ignore-codegen');
 
 module.exports = function (env) {
 
@@ -49,10 +50,10 @@ module.exports = function (env) {
       codeGenConfig,
       devServerConfig
     );
-  }
-  else {
+  } else {
     return merge(
       baseConfig,
+      ignoreCodeGenConfig,
       babelConfig
     );
   }
